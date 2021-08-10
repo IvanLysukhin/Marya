@@ -1,0 +1,147 @@
+.main-nav {
+  width: 1290px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+
+  &--scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+  }
+}
+
+.main-nav__burger-button {
+  width: 23px;
+  height: 16px;
+  position: absolute;
+  left: 13px;
+  margin-left: -75px;
+  top: 38px;
+  font-size: 0;
+  border: 0;
+  cursor: pointer;
+  background: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 26px;
+    height: 2px;
+    background-color: @main-black;
+    box-shadow: 0 8px 0 0 @main-black, 0 -8px 0 0 @main-black;
+  }
+}
+
+.main-nav__info-list {
+  padding: 30px 0;
+  display: flex;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+    width: 923px;
+    height: 1px;
+    background-color: @main-black;
+    opacity: 0.15;
+  }
+
+  &--scroll {
+    display: none;
+  }
+}
+
+.main-nav__info-item {
+  &:not(:first-of-type) {
+    flex-grow: 1;
+  }
+}
+
+.main-nav__company-list {
+  display: flex;
+  justify-content: center;
+  margin-left: 62px;
+}
+
+.main-nav__company-link {
+  display: block;
+  text-decoration: none;
+  color: @main-black;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 13px;
+
+  &:hover {
+    color: @main-red;
+  }
+}
+
+.main-nav__button-link {
+  font-family: "Montserrat", "Arial", sans-serif;
+  color: @main-black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+
+  &--location {
+    display: flex;
+    align-items: center;
+    padding-left: 29px;
+  }
+
+  &:hover {
+    color: @main-red;
+  }
+}
+
+.main-nav__button-link:not(.main-nav__button-link--location):hover path {
+  fill: @main-red;
+}
+
+.main-nav__button-link--location:hover path,
+.main-nav__button-link--location:hover circle {
+  stroke: @main-red;
+}
+
+.main-nav__button-icon {
+  &--location {
+    position: absolute;
+    left: 0;
+  }
+}
+
+.main-nav__buttons-list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-nav__buttons-item {
+  margin-left: 32px;
+}
+
+.main-nav__contact-number {
+  font-weight: 600;
+  font-size: 16px;
+  color: @main-black;
+  text-decoration: none;
+
+  &:hover {
+    color: @main-red;
+  }
+}
+
+.main-nav__contact-text {
+  font-size: 14px;
+  opacity: 0.3;
+}
