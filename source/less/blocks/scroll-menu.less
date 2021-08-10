@@ -1,0 +1,108 @@
+.scroll-menu {
+  background-color: @main-white;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 22px;
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.09);
+  display: none;
+  transition: 2s;
+}
+
+.scroll-menu__list {
+  display: flex;
+  align-items: center;
+  width: 1415px;
+  margin: 0 auto;
+}
+
+.scroll-menu__item {
+  &--left {
+    margin-left: auto;
+  }
+}
+
+.scroll-menu__burger {
+  width: 23px;
+  height: 16px;
+  position: relative;
+  font-size: 0;
+  border: 0;
+  cursor: pointer;
+  background: none;
+  margin-top: 18px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 26px;
+    height: 2px;
+    background-color: @main-black;
+    box-shadow: 0 8px 0 0 @main-black, 0 -8px 0 0 @main-black;
+  }
+
+  &:hover {
+    &::before {
+      background-color: @main-red;
+      box-shadow: 0 8px 0 0 @main-red, 0 -8px 0 0 @main-red;
+    }
+  }
+}
+
+.scroll-menu__logo-link {
+  display: block;
+  margin-left: 31px;
+}
+
+.scroll-menu__tel-link {
+  display: block;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: @main-black;
+  margin-left: 57px;
+}
+
+.scroll-menu__nav-list {
+  justify-self: center;
+  display: flex;
+  justify-content: space-between;
+  width: 288px;
+  margin-left: 116px;
+}
+
+.scroll-menu__buttons-list {
+  display: flex;
+  justify-content: space-between;
+  width: 73px;
+  margin-right: 61px;
+  margin-left: 36px;
+}
+
+.scroll-menu__nav-link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  color: @main-black;
+}
+
+.scroll-menu__order {
+  display: block;
+  padding: 12px 27px;
+  color: #ce3730;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border: 1px solid #ce3730;
+  border-radius: 33px;
+  margin-left: auto;
+
+  &:hover {
+    color: #fff;
+    background-color: #ce3730;
+  }
+}

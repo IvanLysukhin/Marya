@@ -2,6 +2,7 @@ const buttons = Array.from(document.querySelectorAll('.promo-slider__button'));
 const slide = document.querySelector('.promo-slider__slide');
 const smallSlide = document.querySelector('.promo-slider__small-slide');
 const page = document.querySelector('html');
+const scrollMenu = document.querySelector('.scroll-menu');
 
 const changeClasses = function(elm, id) {
   if (elm.classList.contains('promo-slider__slide--first')) {
@@ -75,5 +76,9 @@ buttons.forEach(function (button, id) {
 });
 
 window.addEventListener('scroll', function (evt) {
-  console.log(page.scrollTop);
-})
+  if (page.scrollTop > 300) {
+    scrollMenu.style.display = 'block';
+  } else {
+    scrollMenu.style.display = 'none';
+  }
+});
