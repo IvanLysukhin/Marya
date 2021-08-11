@@ -78,7 +78,7 @@
             </a>
           </li>
           <li class="main-nav__buttons-item">
-            <a class="main-nav__button-link" href="#">
+            <a class="main-nav__button-link main-nav__button-link--search" href="#">
               <svg class="main-nav__button-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -115,6 +115,65 @@
         </ul>
       </li>
     </ul>
+    <div class="search-form">
+      <form class="search-form__form" action="#">
+        <div class="search-form__input-container">
+          <div class="search-form__wrapper">
+            <label class="visually-hidden" for="search">Поиск</label>
+            <input class="search-form__input" type="text" name="search" id="search" value="Кухонные шкафы"/>
+            <button class="search-form__btn">Найти</button>
+          </div>
+        </div>
+        <div class="search-form__result-container">
+          <div class="search-form__result-wrapper">
+            <div class="search-form__popular">
+              <p class="search-form__box-name">Популярные запросы</p>
+              <ul class="search-form__results-list">
+                <li class="search-form__result-item">
+                  <a class="search-form__result" href=""><b>Кухонные шкафы</b> Мария</a>
+                </li>
+                <li class="search-form__result-item">
+                  <a class="search-form__result" href=""><b>Кухонные шкафы</b> серии Микс</a>
+                </li>
+                <li class="search-form__result-item">
+                  <a class="search-form__result" href="">Белые <b>кухонные шкафы</b></a>
+                </li>
+                <li class="search-form__result-item">
+                  <a class="search-form__result" href="">Большие <b>кухонные шкафы</b></a>
+                </li>
+                <li class="search-form__result-item">
+                  <a class="search-form__result" href="">Серия компактный <b>кухонных шкафов</b></a>
+                </li>
+                <li class="search-form__result-item">
+                  <a class="search-form__result" href=""><b>Кухонные шкафы</b> для студий</a>
+                </li>
+              </ul>
+            </div>
+            <div class="search-form__products">
+              <p class="search-form__box-name">Продукция</p>
+              <ul class="search-form__products-results">
+                <li class="search-form__products-item">
+                  <a class="search-form__product-link" href="">
+                    <img class="search-form__product-pic" src="img/result-1.jpg" alt="Кухня Intuit">
+                    <p class="search-form__product-text search-form__product-text--name">Кухня Intuit</p>
+                    <p class="search-form__product-text search-form__product-text--price">цена от 175 806₽</p>
+                    <p class="search-form__product-text search-form__product-text--description">Богемная лаконичность и глянец модели Intuit достигаются отсутствием ручек </p>
+                  </a>
+                </li>
+                <li class="search-form__products-item">
+                  <a class="search-form__product-link" href="">
+                    <img class="search-form__product-pic" src="img/result-2.jpg" alt="Кухня Rimini">
+                    <p class="search-form__product-text search-form__product-text--name">Кухня Rimini</p>
+                    <p class="search-form__product-text search-form__product-text--price">цена от 204 982₽</p>
+                    <p class="search-form__product-text search-form__product-text--description">Богемная лаконичность и глянец модели Intuit достигаются отсутствием ручек </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
     <ul class="main-nav__pagination-list pagination">
       <li class="pagination__item">
         <a class="pagination__logo-link" href="#">

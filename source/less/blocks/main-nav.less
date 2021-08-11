@@ -100,6 +100,16 @@
   font-weight: 600;
   font-size: 14px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+
+  &--current {
+    background-color: @main-red;
+    border-radius: 50%;
+  }
 
   &--location {
     display: flex;
@@ -112,12 +122,21 @@
   }
 }
 
-.main-nav__button-link:not(.main-nav__button-link--location):hover path {
+.main-nav__button-link:hover path {
   fill: @main-red;
+}
+
+.main-nav__button-link--current path {
+  fill: @main-white;
+}
+
+.main-nav__button-link--current:hover path {
+  fill: @main-white;
 }
 
 .main-nav__button-link--location:hover path,
 .main-nav__button-link--location:hover circle {
+  fill: @main-white;
   stroke: @main-red;
 }
 
@@ -134,7 +153,16 @@
 }
 
 .main-nav__buttons-item {
-  margin-left: 32px;
+  margin-left: 5px;
+  margin-top: -14px;
+
+  &:last-of-type {
+    margin-right: -15px;
+  }
+
+  &:first-of-type {
+    margin-right: 22px;
+  }
 }
 
 .main-nav__contact-number {
