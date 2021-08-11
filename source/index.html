@@ -318,108 +318,110 @@
 </header>
 <main class="page-main">
   <h1 class="page-main__title visually-hidden">Мебельная фабрика "Мария"</h1>
-  <section class="page-main__promo-slider promo-slider">
-    <h2 class="visually-hidden">Промо слайдер</h2>
-    <div class="promo-slider__container">
-      <div class="promo-slider__big-slider">
-        <div class="promo-slider__big-slider-container">
-          <div class="promo-slider__slide promo-slider__slide--first">
-            <img src="img/back-bosh-gift.jpg" width="1338" height="826" alt="Bosh">
+  <div class="page-main__wrapper">
+    <section class="page-main__promo-slider promo-slider">
+      <h2 class="visually-hidden">Промо слайдер</h2>
+      <div class="promo-slider__container">
+        <div class="promo-slider__big-slider">
+          <div class="promo-slider__big-slider-container">
+            <div class="promo-slider__slide promo-slider__slide--first">
+              <img src="img/back-bosh-gift.jpg" width="1338" height="826" alt="Bosh">
+            </div>
+            <div class="promo-slider__slide">
+              <img src="img/back-elecrolux-gift.jpg" width="1338" height="826" alt="elecrolux">
+            </div>
+            <div class="promo-slider__slide">
+              <img src="img/back-bosh-gift.jpg" width="1338" height="826" alt="Bosh">
+            </div>
           </div>
-          <div class="promo-slider__slide">
-            <img src="img/back-elecrolux-gift.jpg" width="1338" height="826" alt="elecrolux">
+        </div>
+        <div class="promo-slider__gift-box">
+          <h3 class="visually-hidden">Подарок</h3>
+          <img class="promo-slider__pic" src="img/bosh-log.png" width="180" height="42" alt="логотип подарка"/>
+          <p class="promo-slider__text promo-slider__text--big">Посудомоечная машина в подарок</p>
+          <a class="promo-slider__arrow-link promo-slider__arrow-link--gift" href="#">
+            <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 1L10.5 10L1.5 19" stroke="white" stroke-width="2"/>
+            </svg>
+          </a>
+        </div>
+        <div class="promo-slider__portfolio-box">
+          <h3 class="promo-slider__box-title">Портфолио</h3>
+          <p class="promo-slider__text">Выбери свой проект и дизайнера!</p>
+          <a class="promo-slider__arrow-link" href="#">
+            <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 1L10.5 10L1.5 19" stroke="black" stroke-width="2"/>
+            </svg>
+          </a>
+        </div>
+        <div class="promo-slider__small-slider">
+          <div class="promo-slider__small-slider-container">
+            <div class="promo-slider__small-slide promo-slider__small-slide--first">
+              <img src="img/back-small-bosh-gift.jpg" width="580" height="593" alt="Bosh">
+            </div>
+            <div class="promo-slider__small-slide">
+              <img src="img/back-small-electrolux-gift.jpg" width="580" height="593" alt="elecrolux">
+            </div>
+            <div class="promo-slider__small-slide">
+              <img src="img/back-small-bosh-gift.jpg" width="580" height="593" alt="Bosh">
+            </div>
           </div>
-          <div class="promo-slider__slide">
-            <img src="img/back-bosh-gift.jpg" width="1338" height="826" alt="Bosh">
+        </div>
+        <ul class="promo-slider__buttons-list">
+          <li class="promo-slider__buttons-item">
+            <button class="promo-slider__button promo-slider__button--current"></button>
+          </li>
+          <li class="promo-slider__buttons-item">
+            <button class="promo-slider__button"></button>
+          </li>
+          <li class="promo-slider__buttons-item">
+            <button class="promo-slider__button"></button>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="page-main__catalog catalog">
+      <h2 class="visually-hidden">Каталог</h2>
+      <div class="catalog__wrapper">
+        <div class="catalog__text-container">
+          <p class="catalog__text catalog__text--big">Создайте интерьер в едином стиле вместе с "Марией"</p>
+          <p class="catalog__text catalog__text--small">Мебельная фабрика "Мария" — меблировка "под ключ" в едином стиле
+            по индивидуальному проекту. Кухня, гостиная, ванная — в коллекциях новинок 2021 года!</p>
+        </div>
+        <div class="catalog__catalog-main">
+          <div class="catalog__container catalog__container--left">
+            <ul class="catalog__list">
+              <li class="catalog__item">
+                <img src="img/jazz.jpg" alt="Фото кухни jazz">
+                <a class="catalog__link" href="">Кухня Jazz</a>
+                <p class="catalog__description">Кухня + техника + столовая группа</p>
+              </li>
+              <li class="catalog__item">
+                <img src="img/jazz-2.jpg" alt="Фото кухни jazz">
+                <a class="catalog__link" href="">Кухня Jazz</a>
+                <p class="catalog__description">Кухня + техника + столовая группа</p>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__container catalog__container--right">
+            <ul class="catalog__list">
+              <li class="catalog__item">
+                <img src="img/white.jpg" alt="Фото кухни WHITE">
+                <a class="catalog__link" href="">Белая кухня WHITE</a>
+                <p class="catalog__description">Кухня + техника + столовая группа</p>
+              </li>
+              <li class="catalog__item">
+                <img src="img/white-2.jpg" alt="Фото кухни WHITE">
+                <a class="catalog__link" href="">Белая кухня WHITE</a>
+                <p class="catalog__description">Кухня + техника + столовая группа</p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="promo-slider__gift-box">
-        <h3 class="visually-hidden">Подарок</h3>
-        <img class="promo-slider__pic" src="img/bosh-log.png" width="180" height="42" alt="логотип подарка"/>
-        <p class="promo-slider__text promo-slider__text--big">Посудомоечная машина в подарок</p>
-        <a class="promo-slider__arrow-link promo-slider__arrow-link--gift" href="#">
-          <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.5 1L10.5 10L1.5 19" stroke="white" stroke-width="2"/>
-          </svg>
-        </a>
-      </div>
-      <div class="promo-slider__portfolio-box">
-        <h3 class="promo-slider__box-title">Портфолио</h3>
-        <p class="promo-slider__text">Выбери свой проект и дизайнера!</p>
-        <a class="promo-slider__arrow-link" href="#">
-          <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.5 1L10.5 10L1.5 19" stroke="black" stroke-width="2"/>
-          </svg>
-        </a>
-      </div>
-      <div class="promo-slider__small-slider">
-        <div class="promo-slider__small-slider-container">
-          <div class="promo-slider__small-slide promo-slider__small-slide--first">
-            <img src="img/back-small-bosh-gift.jpg" width="580" height="593" alt="Bosh">
-          </div>
-          <div class="promo-slider__small-slide">
-            <img src="img/back-small-electrolux-gift.jpg" width="580" height="593" alt="elecrolux">
-          </div>
-          <div class="promo-slider__small-slide">
-            <img src="img/back-small-bosh-gift.jpg" width="580" height="593" alt="Bosh">
-          </div>
-        </div>
-      </div>
-      <ul class="promo-slider__buttons-list">
-        <li class="promo-slider__buttons-item">
-          <button class="promo-slider__button promo-slider__button--current"></button>
-        </li>
-        <li class="promo-slider__buttons-item">
-          <button class="promo-slider__button"></button>
-        </li>
-        <li class="promo-slider__buttons-item">
-          <button class="promo-slider__button"></button>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section class="page-main__catalog catalog">
-    <h2 class="visually-hidden">Каталог</h2>
-    <div class="catalog__wrapper">
-      <div class="catalog__text-container">
-        <p class="catalog__text catalog__text--big">Создайте интерьер в едином стиле вместе с "Марией"</p>
-        <p class="catalog__text catalog__text--small">Мебельная фабрика "Мария" — меблировка "под ключ" в едином стиле
-          по индивидуальному проекту. Кухня, гостиная, ванная — в коллекциях новинок 2021 года!</p>
-      </div>
-      <div class="catalog__catalog-main">
-        <div class="catalog__container catalog__container--left">
-          <ul class="catalog__list">
-            <li class="catalog__item">
-              <img src="img/jazz.jpg" alt="Фото кухни jazz">
-              <a class="catalog__link" href="">Кухня Jazz</a>
-              <p class="catalog__description">Кухня + техника + столовая группа</p>
-            </li>
-            <li class="catalog__item">
-              <img src="img/jazz-2.jpg" alt="Фото кухни jazz">
-              <a class="catalog__link" href="">Кухня Jazz</a>
-              <p class="catalog__description">Кухня + техника + столовая группа</p>
-            </li>
-          </ul>
-        </div>
-        <div class="catalog__container catalog__container--right">
-          <ul class="catalog__list">
-            <li class="catalog__item">
-              <img src="img/white.jpg" alt="Фото кухни WHITE">
-              <a class="catalog__link" href="">Белая кухня WHITE</a>
-              <p class="catalog__description">Кухня + техника + столовая группа</p>
-            </li>
-            <li class="catalog__item">
-              <img src="img/white-2.jpg" alt="Фото кухни WHITE">
-              <a class="catalog__link" href="">Белая кухня WHITE</a>
-              <p class="catalog__description">Кухня + техника + столовая группа</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <button class="catalog__button">Показать еще</button>
-  </section>
+      <button class="catalog__button">Показать еще</button>
+    </section>
+  </div>
 </main>
 <div class="menu-modal">
   <div class="scroll-menu scroll-menu--for-modal">
@@ -676,9 +678,9 @@
         <img class="menu-modal__img" src="img/right-promo.jpg" width="845" height="430" alt="Шкаф-купе Mix">
       </div>
       <div class="menu-modal__info-container menu-modal__info-container--right">
-        <h4 class="menu-modal__info-title">Шкаф-купе Mix</h4>
-        <p class="menu-modal__info-text">Дуэт дизайна и практичности сочетающиеся в одной модели</p>
-        <p class="menu-modal__info-price">от 79 125₽</p>
+        <h4 class="menu-modal__info-title">Модель Nicolle</h4>
+        <p class="menu-modal__info-text">Изысканность классики в сочетании со строгостью линий модерна</p>
+        <p class="menu-modal__info-price">от 22 400₽</p>
         <a class="menu-modal__info-link" href="#">
           <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.5 1L10.5 10L1.5 19" stroke="white" stroke-width="2"/>

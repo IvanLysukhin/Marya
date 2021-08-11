@@ -9,6 +9,7 @@ const burgerBtn = document.querySelector('.main-nav__burger-button');
 const burgerCloseBtn = document.querySelector('.scroll-menu__burger--close');
 const menuModal = document.querySelector('.menu-modal');
 const mainContainer = document.querySelector('.page-main');
+const header = document.querySelector('.page-header');
 const promoPic = document.querySelector('.promo-slider__pic');
 const promoText = document.querySelector('.promo-slider__text--big');
 const scrollMenuBtn = document.querySelector('.scroll-menu__burger');
@@ -76,8 +77,44 @@ const changeButtonClass = function(id) {
   });
 };
 
+
+const goToSlide = function (id) {
+  changeButtonClass(id);
+  changeClasses(slide, id);
+  changeSmallClasses(smallSlide, id);
+
+  if (id === 1) {
+    promoPic.src = 'img/electrolux-log.png';
+    promoText.textContent = 'Духовой шкаф со скидкой 20%';
+    return;
+  }
+
+  promoPic.src = 'img/bosh-log.png';
+  promoText.textContent = 'Посудомоечная машина в подарок';
+}
+
+let timer = 0;
+
+setInterval(function() {
+  timer++;
+  console.log(timer);
+  if (timer === 5) {
+    goToSlide(1);
+  }
+
+  if (timer === 10) {
+    goToSlide(2);
+  }
+
+  if (timer === 15) {
+    goToSlide(0);
+    timer = 0;
+  }
+}, 1000)
+
 buttons.forEach(function (button, id) {
   button.addEventListener('click', function () {
+    timer = 0;
     switch (id) {
       case 0:
         changeButtonClass(id);
@@ -113,6 +150,8 @@ window.addEventListener('scroll', function (evt) {
 });
 
 const closeModalSearch = function () {
+  header.classList.remove('page-header--search-modal');
+  mainContainer.classList.remove('page-main--search-modal');
   searchModal.style.display = 'none';
   window.removeEventListener('keydown', closeEsc);
   searchBtn.forEach(function(btn) {
@@ -144,6 +183,8 @@ const addActiveClassForBtn = function(btn) {
 };
 
 const openModalSearch = function () {
+  header.classList.add('page-header--search-modal');
+  mainContainer.classList.add('page-main--search-modal');
   searchModal.style.display = 'block';
   window.addEventListener('keydown', closeEsc);
   searchBtn.forEach(addActiveClassForBtn);
@@ -167,9 +208,7 @@ searchBtn.forEach(function (btn) {
 scrollSearchBtn.addEventListener('click', function (evt) {
   evt.preventDefault();
   window.scrollTo(0, 0);
-  searchModal.style.display = 'block';
-  window.addEventListener('keydown', closeEsc);
-  searchBtn.forEach(addActiveClassForBtn);
+  openModalSearch();
 });
 
 const closeModalByEsc = function (evt) {
