@@ -1,0 +1,141 @@
+.menu-modal {
+  width: 100%;
+  height: 100%;
+  background-color: @main-white;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+.menu-modal__nav {
+  font-weight: 600;
+  font-size: 20px;
+  width: 1288px;
+  margin: 0 auto;
+  padding-top: 8px;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3)
+}
+
+.menu-modal__nav-item {
+  margin-right: 74px;
+}
+
+.menu-modal__nav-link {
+  color: @main-black;
+  text-decoration: none;
+  padding-bottom: 24px;
+  display: block;
+  position: relative;
+
+  &:hover {
+    color: @main-red;
+  }
+
+  &--current {
+    color: @main-red;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      width: 100%;
+      height: 3px;
+      left: 0;
+      background-color: @main-red;
+    }
+  }
+}
+
+.menu-modal__categories {
+  width: 1288px;
+  margin: 0 auto;
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(7, max-content);
+  grid-column-gap: 49px;
+}
+
+.menu-modal__promo {
+  width: 1680px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 98px;
+}
+
+.menu-modal__container {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-modal__pic-container {
+  width: 840px;
+  height: 425px;
+}
+
+.menu-modal__img {
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+.menu-modal__container:hover img {
+  transform: scale(1);
+}
+
+.menu-modal__info-container {
+  background-color: @main-white;
+  box-sizing: border-box;
+  width: 370px;
+  height: 204px;
+  position: absolute;
+  bottom: 30px;
+  right: 29px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  padding: 29px 25px 28px 35px;
+
+  &--right {
+    right: 150px;
+  }
+}
+
+.menu-modal__info-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: @main-red;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  margin: 0;
+}
+
+.menu-modal__info-text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+  color: @main-black;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  margin-bottom: 5px;
+}
+
+.menu-modal__info-price {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 140%;
+  color: @main-black;
+}
+
+.menu-modal__info-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
+  background-color: @main-red;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-top: 7px;
+}
+

@@ -8,7 +8,13 @@
   padding-bottom: 22px;
   box-shadow: 0 14px 24px rgba(0, 0, 0, 0.09);
   display: none;
-  transition: 2s;
+
+  &--for-modal {
+    display: block;
+    box-shadow: none;
+    padding-top: 56px;
+    position: relative;
+  }
 }
 
 .scroll-menu__list {
@@ -51,6 +57,51 @@
       box-shadow: 0 8px 0 0 @main-red, 0 -8px 0 0 @main-red;
     }
   }
+
+  &:hover {
+    &::before {
+      background-color: @main-red;
+      box-shadow: 0 8px 0 0 @main-red, 0 -8px 0 0 @main-red;
+    }
+  }
+
+  &--close {
+    &:hover {
+      &::before {
+        background-color: @main-red;
+        box-shadow: none;
+      }
+
+      &::after {
+        background-color: @main-red;
+        box-shadow: none;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 0;
+      width: 26px;
+      height: 2px;
+      transform: rotate(45deg);
+      background-color: @main-black;
+      box-shadow: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 0;
+      width: 26px;
+      height: 2px;
+      transform: rotate(135deg);
+      background-color: @main-black;
+      box-shadow: none;
+    }
+  }
 }
 
 .scroll-menu__logo-link {
@@ -65,6 +116,11 @@
   font-size: 16px;
   color: @main-black;
   margin-left: 57px;
+
+  &--menu {
+    margin-left: 153px;
+    margin-top: -8px;
+  }
 }
 
 .scroll-menu__nav-list {
@@ -104,5 +160,10 @@
   &:hover {
     color: #fff;
     background-color: #ce3730;
+  }
+
+  &--menu {
+    margin-right: 42px;
+    margin-top: -13px;
   }
 }
