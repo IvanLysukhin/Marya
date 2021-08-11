@@ -3,12 +3,16 @@ const slide = document.querySelector('.promo-slider__slide');
 const smallSlide = document.querySelector('.promo-slider__small-slide');
 const page = document.querySelector('html');
 const scrollMenu = document.querySelector('.scroll-menu');
-const searchBtn = document.querySelector('.main-nav__button-link--search');
+const searchBtn = document.querySelectorAll('.main-nav__button-link--search');
 const searchModal = document.querySelector('.search-form');
 const burgerBtn = document.querySelector('.main-nav__burger-button');
 const burgerCloseBtn = document.querySelector('.scroll-menu__burger--close');
 const menuModal = document.querySelector('.menu-modal');
 const mainContainer = document.querySelector('.page-main');
+const promoPic = document.querySelector('.promo-slider__pic');
+const promoText = document.querySelector('.promo-slider__text--big');
+const scrollMenuBtn = document.querySelector('.scroll-menu__burger');
+const scrollSearchBtn = document.querySelector('.scroll-menu__button--search');
 
 const changeClasses = function(elm, id) {
   if (elm.classList.contains('promo-slider__slide--first')) {
@@ -62,20 +66,39 @@ const changeSmallClasses = function(elm, id) {
   }
 };
 
+const changeButtonClass = function(id) {
+  buttons.forEach(function (btn, i) {
+    if (i === id) {
+      btn.classList.add('promo-slider__button--current');
+    } else {
+      btn.classList.remove('promo-slider__button--current');
+    }
+  });
+};
+
 buttons.forEach(function (button, id) {
   button.addEventListener('click', function () {
     switch (id) {
       case 0:
+        changeButtonClass(id);
         changeClasses(slide, id);
         changeSmallClasses(smallSlide, id);
+        promoPic.src = 'img/bosh-log.png';
+        promoText.textContent = 'Посудомоечная машина в подарок';
         break;
       case 1:
+        changeButtonClass(id);
         changeClasses(slide, id);
         changeSmallClasses(smallSlide, id);
+        promoPic.src = 'img/electrolux-log.png';
+        promoText.textContent = 'Духовой шкаф со скидкой 20%';
         break;
       case 2:
+        changeButtonClass(id);
         changeClasses(slide, id);
         changeSmallClasses(smallSlide, id);
+        promoPic.src = 'img/bosh-log.png';
+        promoText.textContent = 'Посудомоечная машина в подарок';
         break;
     }
   })
@@ -89,37 +112,74 @@ window.addEventListener('scroll', function (evt) {
   }
 });
 
+const closeModalSearch = function () {
+  searchModal.style.display = 'none';
+  window.removeEventListener('keydown', closeEsc);
+  searchBtn.forEach(function(btn) {
+    btn.classList.remove('main-nav__button-link--current');
+  });
+};
+
 const closeEsc = function (evt) {
   if (evt.keyCode === 27) {
-    searchModal.style.display = 'none';
-    window.removeEventListener('keydown', closeEsc);
-    searchBtn.classList.remove('main-nav__button-link--current');
+    closeModalSearch();
   }
 };
 
-searchBtn.addEventListener('click', function (evt) {
-  evt.preventDefault();
-  searchModal.style.display = 'block';
-  window.addEventListener('keydown', closeEsc);
-  searchBtn.classList.add('main-nav__button-link--current');
-})
-
-const closeModalByEsc = function (evt) {
-  if (evt.keyCode === 27) {
-    menuModal.style.display = 'none';
-    window.removeEventListener('keydown', closeModalByEsc);
-    mainContainer.style.display = 'grid';
-  }
-};
-
-burgerBtn.addEventListener('click', function (evt) {
-  menuModal.style.display = 'block';
-  mainContainer.style.display = 'none';
-  window.addEventListener('keydown', closeModalByEsc)
-});
-
-burgerCloseBtn.addEventListener('click', function (evt) {
+const closeModalMenu = function () {
   menuModal.style.display = 'none';
   mainContainer.style.display = 'grid';
   window.removeEventListener('keydown', closeModalByEsc);
+};
+
+const openModalMenu = function () {
+  closeModalSearch();
+  menuModal.style.display = 'block';
+  mainContainer.style.display = 'none';
+  window.addEventListener('keydown', closeModalByEsc)
+};
+
+const addActiveClassForBtn = function(btn) {
+  btn.classList.add('main-nav__button-link--current');
+};
+
+const openModalSearch = function () {
+  searchModal.style.display = 'block';
+  window.addEventListener('keydown', closeEsc);
+  searchBtn.forEach(addActiveClassForBtn);
+};
+
+searchModal.addEventListener('click', function({target}) {
+  if (target.classList.contains('search-form__form') || target.classList.contains('search-form__result-container')) {
+    closeModalSearch();
+  }
+})
+
+
+searchBtn.forEach(function (btn) {
+  btn.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    closeModalMenu();
+    openModalSearch();
+  });
+})
+
+scrollSearchBtn.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  window.scrollTo(0, 0);
+  searchModal.style.display = 'block';
+  window.addEventListener('keydown', closeEsc);
+  searchBtn.forEach(addActiveClassForBtn);
 });
+
+const closeModalByEsc = function (evt) {
+  if (evt.keyCode === 27) {
+    closeModalMenu();
+  }
+};
+
+burgerBtn.addEventListener('click', openModalMenu);
+
+scrollMenuBtn.addEventListener('click', openModalMenu);
+
+burgerCloseBtn.addEventListener('click', closeModalMenu);
